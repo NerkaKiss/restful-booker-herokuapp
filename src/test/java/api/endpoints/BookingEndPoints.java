@@ -11,7 +11,6 @@ public class BookingEndPoints {
     public static Response createBooking(String token, User payload) {
         return given()
                 .contentType(ContentType.JSON)
-                .accept(ContentType.JSON)
                 .headers("Authorization", "Basic " + token)
                 .body(payload)
                 .when()

@@ -1,12 +1,29 @@
 package api.payload;
 
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class User {
 
+    @JsonProperty("firstname")
     private String firstName;
+
+    @JsonProperty("lastname")
     private String lastName;
+
+    @JsonProperty("totalprice")
     private int totalPrice;
+
+    @JsonProperty("depositpaid")
     private boolean depositPaid;
+
+    @JsonProperty("bookingdates")
+    private BookingDates bookingDates;
+
+    @JsonProperty("additionalneeds")
+    private String additionalNeeds;
+
+    // Getteriai ir Setteriai
 
     public String getFirstName() {
         return firstName;
@@ -40,11 +57,11 @@ public class User {
         this.depositPaid = depositPaid;
     }
 
-    public String[] getBookingDates() {
+    public BookingDates getBookingDates() {
         return bookingDates;
     }
 
-    public void setBookingDates(String[] bookingDates) {
+    public void setBookingDates(BookingDates bookingDates) {
         this.bookingDates = bookingDates;
     }
 
@@ -56,7 +73,29 @@ public class User {
         this.additionalNeeds = additionalNeeds;
     }
 
-    private String[] bookingDates;
-    private String additionalNeeds;
+    // Vidinė BookingDates klasė
+    public static class BookingDates {
+        @JsonProperty("checkin")
+        private String checkin;
+
+        @JsonProperty("checkout")
+        private String checkout;
+
+        public String getCheckin() {
+            return checkin;
+        }
+
+        public void setCheckin(String checkin) {
+            this.checkin = checkin;
+        }
+
+        public String getCheckout() {
+            return checkout;
+        }
+
+        public void setCheckout(String checkout) {
+            this.checkout = checkout;
+        }
+    }
 }
 
