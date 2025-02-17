@@ -1,6 +1,5 @@
 package api.payload;
 
-
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class User {
@@ -22,8 +21,6 @@ public class User {
 
     @JsonProperty("additionalneeds")
     private String additionalNeeds;
-
-    // Getteriai ir Setteriai
 
     public String getFirstName() {
         return firstName;
@@ -73,7 +70,6 @@ public class User {
         this.additionalNeeds = additionalNeeds;
     }
 
-    // Vidinė BookingDates klasė
     public static class BookingDates {
         @JsonProperty("checkin")
         private String checkin;
