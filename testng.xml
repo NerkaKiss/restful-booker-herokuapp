@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <listeners>
+        <listener class-name="api.utilities.ExtendReportManager"/>
+    </listeners>
+    <test name="restful-booker-herokuapp">
+        <classes>
+            <class name="api.test.BookingTests">
+                <methods>
+                    <include name="testGetBookings"/>
+                    <include name="testCreateBooking"/>
+                    <include name="testGetBooking"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
